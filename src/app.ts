@@ -1,8 +1,17 @@
 import express from 'express'
-const app = express()
+import { connectDB } from './config/db/mongodb.db'
+import useRoutes from './routes/index.route'
+import { env } from '~/config/env'
 
-app.get('/', function (req, res) {
-  res.send('Hello World')
-})
-console.log('hello word this is local server runing on port localhost:3000')
-app.listen(3000)
+const PORT = env.PORT
+const app = express()
+app.use(express.json())
+app.use(
+  express.urlencoded({
+    extended: false
+  })
+)
+connectDB()
+useRoutes(app)
+
+app.listen(PORT)
