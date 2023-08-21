@@ -14,7 +14,15 @@ export const getAll = async (
   return response.json(res)
 }
 
-export const findById = async (req: Request, res: Response): Promise<void> => {}
-export const create = async (req: Request, res: Response): Promise<void> => {}
-export const remove = async (req: Request, res: Response): Promise<void> => {}
-export const update = async (reeq: Request, res: Response): Promise<void> => {}
+export const findById = async (req: Request, res: Response): Promise<IResonseObject | Response | void | unknown> => {
+  return res.json()
+}
+export const create = async (req: Request, res: Response): Promise<IResonseObject | Response | void | unknown> => {
+  return res.json()
+}
+export const remove = async (req: Request, res: Response): Promise<IResonseObject | Response | void | unknown> => {
+  return res.json()
+}
+export const update = async (reeq: Request, res: Response): Promise<IResonseObject | Response | void | unknown> => {
+  return res.json()
+}

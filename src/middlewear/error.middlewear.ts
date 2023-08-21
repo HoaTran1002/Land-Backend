@@ -25,15 +25,17 @@ export const asyncHandleError = (
 
 export const handleTrustedError = (err: any): IResponseErrorObject => {
   const response: IResponseErrorObject = {
-    message: err.message,
-    status: err.status
+    message: 'The system is handling the error. please wait!',
+    status: 500
   }
 
+  if (err && typeof err === 'object' && 'message' in err) {
+    response.message = err.message
+    response.status = err.status
+  }
   return response
 }
 export const handleError = (err: any, req: Request, res: Response, next: NextFunction) => {
   const errorResponse: IResponseErrorObject = handleTrustedError(err)
-  return res
-    .status(errorResponse.status ? errorResponse.status : 500)
-    .json({ message: 'The system is handling the error. please wait!' })
+  return res.status(errorResponse.status ? errorResponse.status : 500).json({ message: errorResponse.message })
 }

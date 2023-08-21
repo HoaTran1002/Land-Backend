@@ -18,10 +18,11 @@ export interface IRole {
 
 //response object
 export interface IResonseObject {
+  status?: number
   message: string
   data?: unknown
 }
 export interface IResponseErrorObject {
-  message?: string
+  message: string
   status?: number
 }
