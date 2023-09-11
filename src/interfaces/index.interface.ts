@@ -1,16 +1,16 @@
 //model
 
 export interface IAccount {
-  _id: string
-  name: string
-  password: string
-  email: string
-  age: number
-  address: string
-  avatar: string
-  currentJob: string
-  income: number
-  role: string
+  _id?: string
+  name?: string
+  password?: string
+  email?: string
+  age?: number
+  address?: string
+  avatar?: string
+  currentJob?: string
+  income?: number
+  role?: string
 }
 export interface IRole {
   name: string
