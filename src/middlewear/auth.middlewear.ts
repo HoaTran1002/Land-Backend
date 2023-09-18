@@ -1,13 +1,9 @@
 import { NextFunction, Request, Response } from 'express'
 import { IAccount, IResonseObject } from '~/interfaces/index.interface'
-import jwt, { JwtPayload } from 'jsonwebtoken'
-import jwtdecode from 'jwt-decode'
+import jwt from 'jsonwebtoken'
 import { env } from '~/config/env'
-import axios from 'axios'
 import accountModel from '~/models/account.model'
-import { findById } from '~/controllers/account.controller'
-import { requestRefreshToken } from '~/controllers/auth.controller'
-import { asyncHandleError } from './error.middlewear'
+
 interface IDecode {
   iss: string
   sub: string

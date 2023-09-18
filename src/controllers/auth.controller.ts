@@ -178,6 +178,10 @@ export const requestRefreshToken = async (
   })
   return res.status(response.status || 500).json(response)
 }
+export const authGoogle = async (req: Request, res: Response): Promise<IResonseObject | Response | void | unknown> => {
+  console.log('login success with google')
+  return
+}
 export const logOut = async (req: Request, res: Response): Promise<IResonseObject | Response | void | unknown> => {
   res.clearCookie('refreshToken')
   refreshTokens.filter((token) => token !== req.cookies.refreshToken)
